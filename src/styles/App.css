@@ -1,0 +1,22 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  background: var(--cor-bg);
+  color: var(--cor-font);
+}
+
+
+
+:root {
+
+  /* COLOR */
+  --cor-bg: #040608;
+  --cor-icons: #ffffff;
+  --cor-font: #fff;
+  --cor-font-menu: #ffffff;
+  --cor-secundaria: #6c757d;
+  --cor-bg-form: #151420;
+
+  /* BORDAS */
+  --border_sty01: 1px solid #262626; 
+}
