@@ -29,9 +29,11 @@ export const LayoutConteiner = styled.div`
         }
     }
     .boxes_layout:nth-child(3){
+
         width: 20%;
         /* background: slategray; */
         border-left: var(--border_sty01);
+
     }
 
 
@@ -73,5 +75,16 @@ export const LayoutConteiner = styled.div`
     }
 
     }
+
+
+    /* .about_layout{
+        display: none;
+        overflow: hidden;
+
+
+        li{
+            display: none;
+        }
+    } */
    
 `

@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { LayoutConteiner } from './styles'
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import Menu from '../components/Menu'
 import UserInfo from '../components/UserInfos'
+import { IoAlertCircle } from 'react-icons/io5'
 
 const Layout = () => {
   const [display, setDisplay] = useState({
@@ -39,8 +40,8 @@ const Layout = () => {
 
 
       <div className='boxes_layout'>
-        <UserInfo/>
-
+        <UserInfo />
+        
       </div>
 
 

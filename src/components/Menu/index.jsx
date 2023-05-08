@@ -10,11 +10,15 @@ import { MenuConteiner } from './styles'
 import logo from '../../assets/img/logo.svg'
 
 // ICONES
-import { IoHome } from "react-icons/io5";
-import { IoIdCardOutline } from "react-icons/io5";
-import { IoHeart } from "react-icons/io5";
-import { IoSearch } from "react-icons/io5";
-import { IoAlertCircle } from "react-icons/io5";
+import {
+  IoHomeOutline,
+  IoChatboxOutline,
+  IoIdCardOutline,
+  IoHeartOutline,
+  IoSearch,
+  IoLibraryOutline,
+} from "react-icons/io5";
+
 
 const Menu = () => {
   return (
@@ -28,7 +32,7 @@ const Menu = () => {
             <li>
 
               <Link className='boxes_links' to='/'>
-                <IoHome className='boxes_menu_nav_icons' />
+                <IoHomeOutline className='boxes_menu_nav_icons' />
                 <i>Home</i>
               </Link>
             </li>
@@ -40,7 +44,7 @@ const Menu = () => {
             </li>
             <li>
               <Link className='boxes_links' to='/likes'>
-                <IoHeart className='boxes_menu_nav_icons' />
+                <IoHeartOutline className='boxes_menu_nav_icons' />
                 <i>CURTIDA</i>
               </Link>
             </li>
@@ -51,9 +55,15 @@ const Menu = () => {
               </Link>
             </li>
             <li>
-              <Link className='boxes_links' to='/aboult'>
-                <IoAlertCircle className='boxes_menu_nav_icons' />
-                <i>QUEM SOMOS</i>
+              <Link className='boxes_links' to='/createPost'>
+                <IoChatboxOutline className='boxes_menu_nav_icons' />
+                <i>Criar post</i>
+              </Link>
+            </li>
+            <li>
+              <Link className='boxes_links' to='/knowledge'>
+                <IoLibraryOutline className='boxes_menu_nav_icons' />
+                <i>ESTUDOS</i>
               </Link>
             </li>
           </ul>
