@@ -29,7 +29,7 @@ export const useAuthentication = () => {
 
 
 
-
+    // CRIAR UMA USUARIO
     const createUser = async (data) => {
         checkIfCancelled()
 
@@ -83,8 +83,7 @@ export const useAuthentication = () => {
         signOut(auth)
     }
 
-
-
+    // LOGIN
     const login = async (data) => {
         checkIfCancelled()
         setLoading(true)

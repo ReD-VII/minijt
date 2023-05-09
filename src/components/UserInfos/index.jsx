@@ -3,8 +3,15 @@ import { UserInfosConteiner } from './styles'
 
 import avatar from '../../assets/img/avatar.svg'
 
+import { useAuthValue } from '../../context/AuthContext'
+
+
 
 const UserInfo = () => {
+    const { user } = useAuthValue()
+
+
+    
     return (
         <UserInfosConteiner>
             <div className='boxes_userInfo'>
@@ -12,12 +19,8 @@ const UserInfo = () => {
                 <img src={avatar} alt="avatar" />
             </div>
             <div className='boxes_userInfo'>
-                {/* <div className='info_user_userInfo'>
-                    <p>Nome:</p>
-                </div>
-                <div className='info_user_userInfo'>
-                    <p>Função:</p>
-                </div> */}
+                <span className='userInfo_info'>{user.displayName}</span>
+                <span className='userInfo_info'>{user.email}</span>
             </div>
         </UserInfosConteiner>
     )

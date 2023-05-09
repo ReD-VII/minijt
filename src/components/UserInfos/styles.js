@@ -1,83 +1,107 @@
 import styled from "styled-components";
 
 export const UserInfosConteiner = styled.div`
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 80px;
-    /* background: purple; */
-    margin: 0;
-
-
-    .boxes_userInfo{
         display: flex;
+        width: 100%;
         height: 100%;
-    }
-    .boxes_userInfo:nth-child(1){
-        justify-content: flex-start;
-        align-items: center;
-        width: 30%;
-        /* background: blue; */
 
 
-
-
-        img{
-            width: 90%;
-            margin-left: 5px;
-        }
-    }
-    .boxes_userInfo:nth-child(2){
-        justify-content: center;
-        flex-direction: column;
-        
-        width: 70%;
-        /* background: red; */
-
-
-
-        .info_user_userInfo{
+        .boxes_userInfo{
             display: flex;
-            align-items: center;
-            width: calc(100% - 5px);
-            margin-left: 5px;
+            /* width: 100%; */
+            height: 80px;
         }
-        .info_user_userInfo:nth-child(1){
-            /* background: red; */
-            height: 20px;
-        }
-        .info_user_userInfo:nth-child(2){
-            /* background: blue; */
-            height: 20px;
-        }
-        p{
-            margin: 5px 0;
-            margin-left: 0px;
-        }
-    }
-
-
-
-
-    @media (max-width: 768px) {
-
         .boxes_userInfo:nth-child(1){
-            width: 20%;
-            /* background: orange; */
-            img{
-                position: relative;
-                width: 70%;
-                margin-left: 10px;
-                /* background: red; */
-            }
-        } 
-
+            width: 30%;
+            /* background: yellowgreen; */
+            padding: 5px;
+        }
         .boxes_userInfo:nth-child(2){
-            width: 80%;
-            .info_user_userInfo{
-                margin: 0;
+            flex-direction: column;
+            justify-content: center;
+            width: 70%;
+            /* background: tomato; */
+
+
+            .userInfo_info{
+                font-size: .9em;
+                display: inline-block;
+                /* background: turquoise; */
             }
-        } 
-    }
+        }
+
+
+        @media (max-width: 1200px) {
+
+            .boxes_userInfo{
+            /* width: 100%; */
+            height: 80px;
+            }
+            .boxes_userInfo:nth-child(1){
+                width: 30%;
+                /* background: yellowgreen; */
+                padding: 5px;
+
+                img{
+                    width: 100%;
+                }
+            }
+            .boxes_userInfo:nth-child(2){
+                width: 70%;
+                /* background: tomato; */
+
+
+                .userInfo_info{
+                    /* display: none; */
+                    display: inline-block;
+                    font-size: .7em;
+                }
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        @media (max-width: 768px) {
+
+
+            .boxes_userInfo{
+            position: relative;
+            /* width: 100%; */
+            height: 100%;
+            padding: 0;
+            }
+            .boxes_userInfo:nth-child(1){
+                width: 20%;
+                /* background: yellowgreen; */
+                padding: 5px;
+
+                img{
+                    width: 80%;
+                    margin-left: 5px;
+                }
+            }
+            .boxes_userInfo:nth-child(2){
+                width: 80%;
+                
+                /* background: tomato; */
+
+
+                .userInfo_info{
+                    display: inline-block;
+                    font-size: .9em;
+                }
+            }
+        }
+        
 
 `
