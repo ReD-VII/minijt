@@ -12,8 +12,13 @@
 - React icon
 - Lottie web
 - json-loader
+- react-quill draft-js
+- jodit-react
 
-
+### Uninstall
+- react-quill
+- draft-js
+- jodit
 
 ## Ambiente de Produção
 - https://app.netlify.com/

@@ -8,7 +8,7 @@ export const FormsConteiner = styled.div`
     flex-direction: column;
     width: 500px;
     height: auto;
-    /* background: red; */
+    background: red;
     background: var(--cor-bg-form);
     margin: 50px auto;
     left: 0;
@@ -30,7 +30,7 @@ export const FormsConteiner = styled.div`
         height: 90%;
         margin: auto;
         margin-top: 50px;
-        /* background: orange; */
+        background: orange;
         /* padding-top: 50px; */
         
         .boxes_form{

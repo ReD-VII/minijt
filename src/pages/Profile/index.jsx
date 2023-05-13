@@ -15,7 +15,7 @@ const Profile = () => {
   const { user } = useAuthValue() // Pega o usuario disponibilizado no provider
   const { logout } = useAuthentication()
   if(user){
-    console.log(user.displayName)
+    console.log(user)
   }
   return (
     <div>
@@ -23,7 +23,8 @@ const Profile = () => {
       {user && (
         <>
           <h4>Olá, {user.displayName}</h4>
-          <h4>Email, {user.email}</h4>
+          <h4>Email: {user.email}</h4>
+          <h4>ID JMS: {user.idjms}</h4>
           <p style={{ background: "red" }}>SO E EXIBIDO PARA USUÁRIOS LOGADOS</p>
         </>
 

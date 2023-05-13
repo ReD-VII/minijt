@@ -16,6 +16,8 @@ const Register = () => {
     mail: '',
     passwrd: '',
   };
+
+  
   const [confPasswrd, setConfPasswrd] = useState('')
   const [formData, setFormData] = useState(initialStateForm)
   const [error, setError] = useState(null)
@@ -46,7 +48,6 @@ const Register = () => {
       Nome: ${formData.name}
       Email: ${formData.mail}
       Passwrd: ${formData.passwrd}
-
     `)
 
     // REZET FORMULARIO
@@ -80,6 +81,12 @@ const Register = () => {
               <input type="email" name="email" id="email" autoComplete="email" onChange={(e) => setFormData({ ...formData, mail: e.target.value })} value={formData.mail} required />
             </label>
           </div>
+          {/* <div className='boxes_form'>
+            <label>
+              <span>ID JMS</span>
+              <input type="text" name="idjms" id="idjms" onChange={(e) => setFormData({ ...formData, idjms: e.target.value })} value={formData.idjms} required />
+            </label>
+          </div> */}
           <div className='boxes_form'>
             <label>
               <span>Password</span>

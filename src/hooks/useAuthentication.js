@@ -49,6 +49,22 @@ export const useAuthentication = () => {
                 displayName: data.name
             })
 
+
+            // ADIÇÃO DE OUTRAS INFORMAÇÕES PERSONALIZADAS AO BANCO DE DADOS
+            // await db.collection('users').doc(user.uid).set({
+            //     idjms: data.idjms,
+            //     // id: data.id,
+            //     // age: data.age
+            // })
+
+
+
+
+
+
+
+
+
             setLoading(false);
 
 
@@ -88,21 +104,21 @@ export const useAuthentication = () => {
         checkIfCancelled()
         setLoading(true)
         setError(false)
-        
-        
+
+
         try {
             await signInWithEmailAndPassword(auth, data.mail, data.passwrd)
             setLoading(false);
         } catch (error) {
             console.log(error.message);
-            
+
             let sistemErrorMessage;
             if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
                 sistemErrorMessage = 'E-mail ou senha incorretos.';
             } else {
                 sistemErrorMessage = 'Ocorreu um erro ao fazer login.';
             }
-            
+
             setError(sistemErrorMessage);
             setLoading(false);
         }
