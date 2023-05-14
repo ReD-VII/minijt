@@ -5,7 +5,9 @@
   color: var(--cor-font);
 }
 
-
+.jodit-status-bar{
+  display: none;
+}
 
 :root {
 
