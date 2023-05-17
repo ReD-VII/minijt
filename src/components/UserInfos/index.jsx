@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { UserInfosConteiner } from './styles'
 
 import avatar from '../../assets/img/avatar.svg'
@@ -9,9 +9,12 @@ import { useAuthValue } from '../../context/AuthContext'
 
 const UserInfo = () => {
     const { user } = useAuthValue()
+    const [onUser, setOnUser] = useState(null)
+    useEffect(() => {
+        
+        setOnUser(user)
+    }, [user])
 
-
-    
     return (
         <UserInfosConteiner>
             <div className='boxes_userInfo'>
@@ -19,8 +22,12 @@ const UserInfo = () => {
                 <img src={avatar} alt="avatar" />
             </div>
             <div className='boxes_userInfo'>
-                <span className='userInfo_info'>{user.displayName}</span>
-                <span className='userInfo_info'>{user.email}</span>
+                {onUser &&
+                    <>
+                        <span className='userInfo_info'>{user.displayName}</span>
+                        <span className='userInfo_info'>{user.email}</span>
+                    </>
+                }
             </div>
         </UserInfosConteiner>
     )

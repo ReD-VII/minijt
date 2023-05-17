@@ -1,87 +1,129 @@
-import React, { useState } from 'react'
+import styles from "./CreatePost.module.css";
 
-
-import { useNavigate } from 'react-router-dom'
-
-import { useAuthValue } from '../../context/AuthContext'
-import { CreateFormStyleConteiner } from './styles'
-import { FormConteiner } from '../../styles/Theme/forms'
-
-
-
+import { useState } from "react";
+import { useInsertDocument } from "../../hooks/useInsertDocument";
+import { useNavigate } from "react-router-dom";
+import { useAuthValue } from "../../context/AuthContext";
+import { CreateFormStyleConteiner } from "./styles";
 
 const CreatePost = () => {
+  const [title, setTitle] = useState("");
+  const [image, setImage] = useState("");
+  const [body, setBody] = useState("");
+  const [tags, setTags] = useState([]);
+  const [formError, setFormError] = useState("");
 
-  const [title, setTitle] = useState('')
-  const [image, setImage] = useState('')
-  const [body, setBody] = useState('')
-  const [tags, setTags] = useState([])
-  const [ rage, setRage ] = useState(10)
-  const [formError, setFormError] = useState('')
+  const { user } = useAuthValue();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  const navigate = useNavigate();
 
-  }
+  const { insertDocument, response } = useInsertDocument("posts");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormError("");
+
+    // validate image
+    try {
+      new URL(image);
+    } catch (error) {
+      setFormError("A imagem precisa ser uma URL.");
+    }
+
+    // create tags array
+    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
+
+    // check values
+    if (!title || !image || !tags || !body) {
+      setFormError("Por favor, preencha todos os campos!");
+    }
+
+    console.log(tagsArray);
+
+    console.log({
+      title,
+      image,
+      body,
+      tags: tagsArray,
+      uid: user.uid,
+      createdBy: user.displayName,
+    });
+
+    if(formError) return
+
+    insertDocument({
+      title,
+      image,
+      body,
+      tags: tagsArray,
+      uid: user.uid,
+      createdBy: user.displayName,
+    });
+
+    // redirect to home page
+    navigate("/");
+  };
 
   return (
-    <>
-      <h1 style={{
-        textAlign: 'center',
-        marginTop: '10px',
-      }}>Criar post</h1>
-      <FormConteiner>
-        <div className='form_conteiner'>
-          <form >
-            <div className='FormGroup'>
-              <label>
-                <span>Título</span>
-                <input type='text' name='title' required onChange={(e) => setTitle(e.target.value)} value={title} />
-              </label>
-            </div>
-            <div className='FormGroup'>
-              <label>
-                <span>URL da imagem</span>
-                <input type='text' name='title' required onChange={(e) => setImage(e.target.value)} value={image} />
-              </label>
-            </div>
-            <div className='FormGroup'>
-              <label>
-                <span>Rage: {rage}</span>
-                {/* <span className='rage'></span> */}
-                <input type='range' name='title' required onChange={(e) => setRage(e.target.value)} value={rage} />
-              </label>
-            </div>
-            <div className='FormGroup'>
-              <label>
-                <span>Conteúdo</span>
-                <textarea className="meu-textarea" name='body' required onChange={(e) => setBody(e.target.value)} value={body} />
-              </label>
-            </div>
-            <div className='FormGroup'>
-              <label>
-                <span>Tags</span>
-                <input type='text' name='Tags' required onChange={(e) => setTags(e.target.value)} value={tags} />
-              </label>
-            </div>
-            
+    <CreateFormStyleConteiner>
+      <h2>Criar post</h2>
+      <p>Escreva sobre o que quiser e compartilhe o seu conhecimento!</p>
+      <form onSubmit={handleSubmit}>
+        <label>
+          <span>Título:</span>
+          <input
+            type="text"
+            name="text"
+            required
+            placeholder="Pense num bom título..."
+            onChange={(e) => setTitle(e.target.value)}
+            value={title}
+          />
+        </label>
+        <label>
+          <span>URL da imagem:</span>
+          <input
+            type="text"
+            name="image"
+            required
+            placeholder="Insira uma imagem que representa seu post"
+            onChange={(e) => setImage(e.target.value)}
+            value={image}
+          />
+        </label>
+        <label>
+          <span>Conteúdo:</span>
+          <textarea
+            name="body"
+            required
+            placeholder="Insira o conteúdo do post"
+            onChange={(e) => setBody(e.target.value)}
+            value={body}
+          ></textarea>
+        </label>
+        <label>
+          <span>Tags:</span>
+          <input
+            type="text"
+            name="tags"
+            required
+            placeholder="Insira as tags separadas por vírgula"
+            onChange={(e) => setTags(e.target.value)}
+            value={tags}
+          />
+        </label>
+        {!response.loading && <button className="btn">Criar post!</button>}
+        {response.loading && (
+          <button className="btn" disabled>
+            Aguarde.. .
+          </button>
+        )}
+        {(response.error || formError) && (
+          <p className="error">{response.error || formError}</p>
+        )}
+      </form>
+    </CreateFormStyleConteiner>
+  );
+};
 
-            {/* {!loading && <input className='btn_forms' type="submit" value='Enviar' />}
-            {loading && <input className='btn_forms' type="submit" value='aguarde...' disabled />} */}
-            {/* <input className='btn_forms' type="submit" value='Postar...' /> */}
-
-            <div className='btn_conteiner'>
-
-              <button className='btn_forms' name='' type='submit'>Postar</button>
-            </div>
-          </form>
-          {/* {error &&
-          <p className='erro_msg'>{error}</p>
-        } */}
-        </div>
-      </FormConteiner>
-    </>
-  )
-}
-
-export default CreatePost
+export default CreatePost;

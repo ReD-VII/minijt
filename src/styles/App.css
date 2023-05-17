@@ -21,11 +21,14 @@
 
   /* BORDAS */
   --border_sty01: 1px solid #262626; 
+  
+  --bg-btn: #2600ff;
+  --bg-btn-active: #684eff;
+
 }
 
 
 .cool{
   color: #040608;
-  color: #2600ff;
   color: #684eff;
 }

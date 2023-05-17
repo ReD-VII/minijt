@@ -24,10 +24,16 @@ export const UserInfosConteiner = styled.div`
 
 
             .userInfo_info{
-                font-size: .9em;
+                font-size: 1em;
+                font-weight: 600;
                 display: inline-block;
                 /* background: turquoise; */
             }
+            .userInfo_info:nth-child(2){
+                font-size: .8em;
+                font-weight: 400;
+                    /* background: red; */
+                }
         }
 
 
@@ -56,6 +62,7 @@ export const UserInfosConteiner = styled.div`
                     display: inline-block;
                     font-size: .7em;
                 }
+            
             }
 
         }
