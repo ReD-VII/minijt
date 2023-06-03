@@ -23,12 +23,6 @@ const Layout = () => {
 
 
       <div className='boxes_layout'>
-        {/* {display.width < 750 ?
-          <></>
-          :
-          
-          
-        } */}
         <Menu />
       </div>
 

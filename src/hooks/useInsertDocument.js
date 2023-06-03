@@ -2,15 +2,19 @@ import { useState, useEffect, useReducer } from "react";
 import { db } from "../services/firebase/configs";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 
+
+//  Estado inicial do Reducer
 const initialState = {
   loading: null,
   error: null,
 };
 
+
+// Função do REDUCER
 const insertReducer = (state, action) => {
   switch (action.type) {
     case "LOADING":
-      return { loading: true, error: null };
+      return { loading: true, error: null }; // Loadin ativado
     case "INSERTED_DOC":
       return { loading: false, error: null };
     case "ERROR":
@@ -20,8 +24,10 @@ const insertReducer = (state, action) => {
   }
 };
 
+
 export const useInsertDocument = (docCollection) => {
-  const [response, dispatch] = useReducer(insertReducer, initialState);
+  
+  const [response, dispatch] = useReducer(insertReducer, initialState); //Inicial STATE
 
   // deal with memory leak
   const [cancelled, setCancelled] = useState(false);
@@ -33,6 +39,8 @@ export const useInsertDocument = (docCollection) => {
   };
 
   const insertDocument = async (document) => {
+
+    // 
     checkCancelBeforeDispatch({ type: "LOADING" });
 
     try {
@@ -50,6 +58,8 @@ export const useInsertDocument = (docCollection) => {
     } catch (error) {
       checkCancelBeforeDispatch({ type: "ERROR", payload: error.message });
     }
+
+    
   };
 
   useEffect(() => {

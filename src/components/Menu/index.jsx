@@ -30,7 +30,6 @@ const Menu = () => {
         <nav>
           <ul>
             <li>
-
               <Link className='boxes_links' to='/'>
                 <IoHomeOutline className='boxes_menu_nav_icons' />
                 <i>Home</i>

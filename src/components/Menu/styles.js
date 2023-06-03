@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const MenuConteiner = styled.div`
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     left: 0;
-    width: 20%;
+    width: 300px;
     height: 100%;
-    background: var(--cor-bg);
-    border-right: 1px solid #262626;
+    /* background: var(--cor-bg); */
+    /* border-right: 1px solid #262626; */
 
 
     .boxes_menu_conteiner{
@@ -40,7 +40,7 @@ export const MenuConteiner = styled.div`
                 li{
                     display: flex;
                     align-items: center;
-                    margin: 25px 0 0 20px;
+                    margin: 30px 0px 0px 10px;
                     /* background: blue; */
 
                     .boxes_links{
@@ -50,11 +50,12 @@ export const MenuConteiner = styled.div`
                     }
                     a{
                         /* margin-top: -2px; */
-                        font-size: 1.0em;
+                        font-size: .9em;
                         font-weight: 600;
                         color: var(--cor-font-menu);
                         text-decoration: none;
                         list-style: none;
+                        text-transform: uppercase;
                     }
                     .boxes_menu_nav_icons{
                         color: var(--cor-icons);

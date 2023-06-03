@@ -12,9 +12,15 @@ export const UserInfosConteiner = styled.div`
             height: 80px;
         }
         .boxes_userInfo:nth-child(1){
+            display: flex;
+            justify-content: center;
             width: 30%;
             /* background: yellowgreen; */
             padding: 5px;
+            img{
+                /* background: red; */
+                width: 70%;
+            }
         }
         .boxes_userInfo:nth-child(2){
             flex-direction: column;
@@ -33,7 +39,7 @@ export const UserInfosConteiner = styled.div`
                 font-size: .8em;
                 font-weight: 400;
                     /* background: red; */
-                }
+            }
         }
 
 
@@ -93,7 +99,7 @@ export const UserInfosConteiner = styled.div`
                 padding: 5px;
 
                 img{
-                    width: 80%;
+                    width: 70%;
                     margin-left: 5px;
                 }
             }

@@ -30,7 +30,7 @@ export const FormsConteiner = styled.div`
         height: 90%;
         margin: auto;
         margin-top: 50px;
-        background: orange;
+        /* background: orange; */
         /* padding-top: 50px; */
         
         .boxes_form{

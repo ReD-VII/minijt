@@ -31,4 +31,15 @@
 .cool{
   color: #040608;
   color: #684eff;
+
+  background: #606c88;
+  background: -webkit-linear-gradient(to right, #151420, #191c24);
+  background: linear-gradient(to right, #151420, #191c24);
+  background: -webkit-linear-gradient(to right, blue, #3535ff);
+  background: linear-gradient(to right, blue, #3535ff);
+
+
+  background: #E1B268;
+  background: -webkit-linear-gradient(to right, #E1B268 10%, #ffbb4e);
+  background: linear-gradient(150deg, #E1B268 10%, #ffbb4e 100%);
 }

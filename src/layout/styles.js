@@ -14,13 +14,15 @@ export const LayoutConteiner = styled.div`
         margin: auto;
     }
     .boxes_layout:nth-child(1){
-        width: 20%;
+        width: 14%;
         /* background: violet; */
+        border-right: 1px solid #262626;
     }
     .boxes_layout:nth-child(2){
-        width: 60%;
+        width: 66%;
         flex-grow: 3;
         overflow: auto;
+        /* background: red; */
         ::-webkit-scrollbar {
             width: 0;
         }
@@ -72,6 +74,7 @@ export const LayoutConteiner = styled.div`
         height: 10%;
         /* background: greenyellow; */
         border-bottom: var(--border_sty01);
+        border-left: none;
     }
 
     }

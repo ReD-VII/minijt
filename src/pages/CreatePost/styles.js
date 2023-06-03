@@ -14,6 +14,7 @@ export const CreateFormStyleConteiner = styled.div`
   h2{
     text-align: center;
     margin-top: 20px;
+    /* background: blue; */
   }
 
   p{
@@ -23,6 +24,7 @@ export const CreateFormStyleConteiner = styled.div`
 
   form{
     display: flex;
+    justify-content: center;
     flex-direction: column;
     width: 80%;
     height: auto;
@@ -52,6 +54,7 @@ export const CreateFormStyleConteiner = styled.div`
     padding-left: 15px;
     background: #151420;
     border: var(--border_sty01);
+    color: white;
     :focus {
       outline: none;
     }
@@ -63,6 +66,10 @@ export const CreateFormStyleConteiner = styled.div`
     height: 100px;
     background: #151420;
     border: var(--border_sty01);
+    color: white;
+    :focus {
+      outline: none;
+    }
   }
 
   .btn{
@@ -86,6 +93,12 @@ export const CreateFormStyleConteiner = styled.div`
    @media (max-width: 768px) {
       height: 100%;
 
+
+      span{
+        font-size: .9em;
+        margin-bottom: 5px;
+        margin-left: 5px;
+      }
       form{
         width: 100%;
         /* background: red; */
